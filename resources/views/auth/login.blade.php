@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
 <div class="column is-one-third-desktop is-one-mobile">
@@ -7,7 +7,7 @@
             @csrf
             <div class="card-content">
                 <h1 class="title has-text-centered">
-                    <a href="">
+                    <a href="/">
                         <img src="http://via.placeholder.com/250x250" alt="Logo">
                     </a>
                 </h1>

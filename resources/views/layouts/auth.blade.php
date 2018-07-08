@@ -19,19 +19,15 @@
 </head>
 
 <body>
-    <div id="app">
-        @include('layouts.partials._navbar')
-        <div class="container is-fluid">
-            <div class="columns">
-                <div class="column is-2">
-                    @include('layouts.partials._sidebar')
-                </div>
-                <div class="column is-10">
+    <section class="hero is-fullheight is-primary is-bold" id="app">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
                     @yield('content')
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </body>
 
 </html>

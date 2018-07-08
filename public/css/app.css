@@ -1,4 +1,4 @@
-/*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);/*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 
 @-webkit-keyframes spinAround {
   from {
@@ -11513,5 +11513,11 @@ label.panel-block:hover {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
+}
+
+html,
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
 }
 
