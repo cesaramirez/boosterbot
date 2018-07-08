@@ -4,10 +4,14 @@
 <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
         <li>
-            <a href="{{ route('home') }}">Inicio</a>
+            <a href="{{ route('home') }}">
+                <span class="z-dashboard text-sm mr-2"></span>@lang('Home')
+            </a>
         </li>
         <li class="is-active">
-            <a href="#" aria-current="page">@lang('Users')</a>
+            <a href="#" aria-current="page">
+                <span class="z-user text-sm mr-2"></span> @lang('Users')
+            </a>
         </li>
     </ul>
 </nav>

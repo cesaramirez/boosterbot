@@ -4,9 +4,9 @@
     </p>
     <ul class="menu-list">
         <li>
-            <a class="is-active"
+            <a class="{{ isActive('home') }}"
                href="{{ route('home') }}">
-                <span class="icon-dashboard mr-2"></span>
+                <span class="z-dashboard mr-2"></span>
                 @lang('Dashboard')
             </a>
         </li>
@@ -16,14 +16,15 @@
     </p>
     <ul class="menu-list">
         <li>
-            <a  href="{{ route('users.index') }}">
-                <span class="icon-user-group mr-2"></span>
+            <a class="{{ isActive('users*') }}"
+               href="{{ route('users.index') }}">
+                <span class="z-user-group mr-2"></span>
                 @lang('Users')
             </a>
         </li>
     </ul>
     <p class="menu-label">
-        Secciones
+        Sections
     </p>
     <ul class="menu-list">
 

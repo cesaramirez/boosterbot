@@ -9,40 +9,40 @@
             v-model="perPage"
             :disabled="!isPaginated"
             class="shadow">
-            <option value="5">5 por Página</option>
-            <option value="10">10 por Página</option>
-            <option value="15">15 por Página</option>
-            <option value="20">20 por Página</option>
+            <option value="5">5 {{ textPerPage }}</option>
+            <option value="10">10 {{ textPerPage }}</option>
+            <option value="15">15 {{ textPerPage }}</option>
+            <option value="20">20 {{ textPerPage }}</option>
           </b-select>
         </b-field>
         <b-table
           :data="filteredList"
-          mobile-cards hoverable
+          mobile-cards
+          hoverable
           :paginated="isPaginated"
           :per-page="perPage">
           <template slot-scope="props">
-
-            <b-table-column field="name" label="Nombre" sortable>
+            <b-table-column field="name" label="Name" sortable>
               {{ props.row.name }}
             </b-table-column>
 
-            <b-table-column field="email" label="Correo Electrónico" sortable>
+            <b-table-column field="email" label="Email" sortable>
               {{ props.row.email }}
             </b-table-column>
 
-            <b-table-column field="active" label="Activo" centered>
+            <b-table-column field="active" label="Active" centered>
               <span class="tag" :class="props.row.active ? 'is-success' : 'is-danger'">
                 {{ props.row.active ? 'Si' : 'No' }}
               </span>
             </b-table-column>
 
-            <b-table-column field="created_at" label="Fecha de Creación" centered sortable>
+            <b-table-column field="created_at" label="Created At" centered sortable>
               <span class="tag is-success">
                 {{ props.row.created_at }}
               </span>
             </b-table-column>
 
-            <b-table-column field="updated_at" label="Fecha de Actualización" centered sortable>
+            <b-table-column field="updated_at" label="Updated At" centered sortable>
               <span class="tag is-success">
                 {{ props.row.updated_at }}
               </span>
@@ -71,7 +71,8 @@
             <section class="section">
               <div class="content has-text-grey has-text-centered">
                 <p>
-                  <b-icon icon="emoticon-sad" size="is-large">
+                  <b-icon icon="emoticon-sad"
+                          size="is-large">
                   </b-icon>
                 </p>
                 <p>Nada por aquí.</p>
@@ -102,7 +103,8 @@ export default {
       destroyId: null,
       csrf: document
         .querySelector('meta[name="csrf-token"]')
-        .getAttribute("content")
+        .getAttribute("content"),
+      textPerPage: "per page"
     };
   },
   methods: {
