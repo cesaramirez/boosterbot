@@ -16,7 +16,7 @@
     </p>
     <ul class="menu-list">
         <li>
-            <a  href="">
+            <a  href="{{ route('users.index') }}">
                 <span class="icon-user-group mr-2"></span>
                 @lang('Users')
             </a>

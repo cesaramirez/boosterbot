@@ -12,5 +12,6 @@
     </ul>
 </nav>
 <section>
+    <users-index :users="{{ $users}}" />
 </section>
 @endsection
