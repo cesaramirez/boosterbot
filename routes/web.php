@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+$router->middleware('access.active')
+    ->group(function ($router) {
+        $router->get('/home', 'HomeController@index')->name('home');
+
+        $router->resource('users', 'UsersController');
+    });

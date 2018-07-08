@@ -1,0 +1,16 @@
+{
+    "Login": "Iniciar Sesión",
+    "Remember Me": "Recordarme",
+    "Email": "Correo Electrónico",
+    "Password": "Contraseña",
+
+    "Reset Password": "Restablecer Contraseña",
+    "Reset": "Restablecer",
+    "Email Password": "Enviar Correo Electrónico",
+    "Forgot Your Password?": "¿Olvido su Contraseña?",
+
+    "Dashboard": "Inicio",
+    "Users": "Usuarios",
+    "Create User": "Crear Usuario",
+    "Edit User": "Editar Usuario"
+}
