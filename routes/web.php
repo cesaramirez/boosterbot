@@ -34,4 +34,5 @@ $router->middleware('access.active')
 
            $router->resource('users', 'UsersController')->except('show');
            $router->resource('rewards', 'RewardsController')->except('show');
+           $router->resource('activities', 'ActivitiesController')->except('show');
        });

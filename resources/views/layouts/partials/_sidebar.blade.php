@@ -34,5 +34,12 @@
                 @lang('Rewards')
             </a>
         </li>
+        <li>
+            <a class="{{ isActive('activities*') }}"
+               href="{{ route('activities.index') }}">
+                <span class="z-travel-walk mr-2"></span>
+                @lang('Activities')
+            </a>
+        </li>
     </ul>
 </aside>
