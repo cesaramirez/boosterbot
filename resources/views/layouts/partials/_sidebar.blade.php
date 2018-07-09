@@ -41,5 +41,12 @@
                 @lang('Activities')
             </a>
         </li>
+        <li>
+            <a class="{{ isActive('networks*') }}"
+               href="{{ route('networks.index') }}">
+                <span class="z-network mr-2"></span>
+                @lang('Wifi Networks')
+            </a>
+        </li>
     </ul>
 </aside>
