@@ -10,7 +10,7 @@
         </li>
         <li class="is-active">
             <a href="#" aria-current="page">
-                <span class="z-user text-sm mr-2"></span> @lang('Users')
+                <span class="z-user-group text-sm mr-2"></span> @lang('Users')
             </a>
         </li>
     </ul>

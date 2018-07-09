@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -51,17 +52,30 @@ class UsersController extends Controller
      */
     public function create()
     {
+        return view('users.form');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\UserStoreRequest $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserStoreRequest $request)
     {
+        $this->users->fill($request->all());
+
+        $this->users->active = $request->get('active', false);
+
+        $this->users->password = bcrypt($request->password);
+
+        if ($this->users->save()) {
+            return redirect(route('users.index'))
+                    ->with('success', '¡El Usuario ha sido Guardado con exito!');
+        }
+
+        return back();
     }
 
     /**

@@ -1,5 +1,10 @@
 <template>
   <section>
+      <div class="mb-6">
+          <a class="button is-success rounded font-medium shadow" :href="route('users.create')">
+              <span class="z-add-solid mr-2"></span>Create User
+          </a>
+      </div>
     <div class="card">
       <div class="card-content">
         <b-field
@@ -55,12 +60,12 @@
                 </p>
                 <b-dropdown-item has-link>
                   <a :href="route('users.edit', props.row.id)">
-                    <span class="font-medium">Editar</span>
+                    <span class="font-medium">Edit</span>
                   </a>
                 </b-dropdown-item>
                 <b-dropdown-item has-link>
                   <a href="" @click.prevent.stop="destroy(props.row.id)">
-                    <span class="text-red font-medium">Eliminar</span>
+                    <span class="text-red font-medium">Delete</span>
                   </a>
                 </b-dropdown-item>
             </b-dropdown>
@@ -75,7 +80,7 @@
                           size="is-large">
                   </b-icon>
                 </p>
-                <p>Nada por aquí.</p>
+                <p>Nothing here</p>
               </div>
             </section>
           </template>
@@ -107,17 +112,17 @@ export default {
       textPerPage: "per page"
     };
   },
-  methods: {
-    destroy(id) {
-      this.modal = true;
-      this.destroyId = id;
-    }
-  },
   computed: {
     filteredList() {
       return this.users.filter(user => {
         return user.name.toLowerCase().includes(this.search.toLowerCase());
       });
+    }
+  },
+  methods: {
+    destroy(id) {
+      this.modal = true;
+      this.destroyId = id;
     }
   }
 };
