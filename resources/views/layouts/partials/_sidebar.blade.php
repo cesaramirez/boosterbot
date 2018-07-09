@@ -27,6 +27,12 @@
         Sections
     </p>
     <ul class="menu-list">
-
+        <li>
+            <a class="{{ isActive('rewards*') }}"
+               href="{{ route('rewards.index') }}">
+                <span class="z-badge mr-2"></span>
+                @lang('Rewards')
+            </a>
+        </li>
     </ul>
 </aside>
