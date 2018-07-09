@@ -37,19 +37,19 @@
 
             <b-table-column field="active" label="Active" centered>
               <span class="tag" :class="props.row.active ? 'is-success' : 'is-danger'">
-                {{ props.row.active ? 'Si' : 'No' }}
+                {{ props.row.active ? 'Yes' : 'No' }}
               </span>
             </b-table-column>
 
             <b-table-column field="created_at" label="Created At" centered sortable>
               <span class="tag is-success">
-                {{ props.row.created_at }}
+                {{ format(props.row.created_at) }}
               </span>
             </b-table-column>
 
             <b-table-column field="updated_at" label="Updated At" centered sortable>
               <span class="tag is-success">
-                {{ props.row.updated_at }}
+                {{ format(props.row.updated_at) }}
               </span>
             </b-table-column>
 
@@ -60,12 +60,16 @@
                 </p>
                 <b-dropdown-item has-link>
                   <a :href="route('users.edit', props.row.id)">
-                    <span class="font-medium">Edit</span>
+                    <span class="font-medium">
+                        <span class="z-edit-pencil mr-2"/>Edit
+                    </span>
                   </a>
                 </b-dropdown-item>
                 <b-dropdown-item has-link>
                   <a href="" @click.prevent.stop="destroy(props.row.id)">
-                    <span class="text-red font-medium">Delete</span>
+                    <span class="text-red font-medium">
+                        <span class="z-trash mr-2 text-red"/>Delete
+                    </span>
                   </a>
                 </b-dropdown-item>
             </b-dropdown>
@@ -87,10 +91,27 @@
         </b-table>
       </div>
     </div>
+    <b-modal :active.sync="modalDelete" :width="300" scroll="keep">
+        <div class="card">
+            <div class="card-content text-center">
+                <span class="z-exclamation-outline is-size-2 text-red mb-2"></span>
+                <p class="font-medium text-xl">¿Esta seguro que desea eliminar el registro?</p>
+            </div>
+            <footer class="card-footer">
+                <form :action="route('users.destroy', destroyId)" method="POST" id="delete-user" class="card-footer-item">
+                    <input type="hidden" name="_token" :value="csrf">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" value="delete" class="text-red-lighter font-bold hover:text-red">Si, Estoy Seguro</button>
+                </form>
+                <a class="card-footer-item font-bold text-blue-light hover:text-blue" @click="modalDelete = false">Cancelar</a>
+            </footer>
+        </div>
+    </b-modal>
   </section>
 </template>
 
 <script>
+import dayjs from "dayjs";
 export default {
   name: "UsersIndex",
   props: {
@@ -101,11 +122,11 @@ export default {
   },
   data() {
     return {
-      perPage: 5,
+      perPage: 10,
       isPaginated: true,
       search: "",
-      modal: false,
-      destroyId: null,
+      modalDelete: false,
+      destroyId: 0,
       csrf: document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
@@ -121,8 +142,11 @@ export default {
   },
   methods: {
     destroy(id) {
-      this.modal = true;
+      this.modalDelete = true;
       this.destroyId = id;
+    },
+    format(date) {
+      return dayjs(date).format("DD/MMMM/YYYY");
     }
   }
 };

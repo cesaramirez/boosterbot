@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
@@ -98,18 +98,35 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        $user->password = null;
+
+        return view('users.form', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\User         $user
+     * @param \App\Http\Requests\UserUpdateRequest $request
+     * @param \App\Models\User                     $user
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
+        $user->fill($request->except('password'));
+
+        $user->active = $request->get('active', false);
+
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
+
+        if ($user->save()) {
+            return redirect(route('users.index'))
+                ->with('success', '¡El Usuario ha sido Actualizado con exito!');
+        }
+
+        return back();
     }
 
     /**
@@ -121,5 +138,9 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
+        $user->delete();
+
+        return redirect(route('users.index'))
+                    ->with('success', '¡El Usuario ha sido eliminado con exito del sistema!');
     }
 }

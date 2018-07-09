@@ -99,7 +99,11 @@
             <div class="card-footer-item flex flex-col md:flex-row justify-end">
                 <button type="submit"
                         class="button is-info font-medium shadow mx-2 w-full md:w-auto">
-                        <span class="z-save-disk mr-2"></span> @lang('Save')
+                        @isset($user)
+                            <span class="z-save-disk mr-2"></span> @lang('Update')
+                        @else
+                            <span class="z-save-disk mr-2"></span> @lang('Save')
+                        @endisset
                 </button>
                 <a class="button is-light font-medium shadow mx-2 w-full md:w-auto"
                    href="{{ route('users.index') }}">

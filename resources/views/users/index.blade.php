@@ -16,6 +16,11 @@
     </ul>
 </nav>
 <section>
+    @if(session('success'))
+        <b-notification type="is-success" has-icon class="flex items-center">
+            {{ session('success') }}
+        </b-notification>
+    @endif
     <users-index :users="{{ $users}}" />
 </section>
 @endsection

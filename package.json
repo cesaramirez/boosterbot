@@ -17,6 +17,7 @@
         "bulma": "^0.7.1",
         "bulma-extensions": "^2.2.1",
         "cross-env": "^5.2.0",
+        "dayjs": "^1.7.2",
         "laravel-mix": "^2.1.11",
         "lodash": "^4.17.10",
         "tailwindcss": "^0.6.1",

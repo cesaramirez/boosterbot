@@ -2007,6 +2007,10 @@ dateformat@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.2.0.tgz#4065e2013cf9fb916ddfd82efb506ad4c6769062"
 
+dayjs@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.7.2.tgz#31b65d962a59a7e5bb2a20f01002a4b8d6d6f62c"
+
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
@@ -7669,10 +7673,6 @@ validate-npm-package-license@^3.0.1:
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
-
-vee-validate@^2.1.0-beta.6:
-  version "2.1.0-beta.6"
-  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.1.0-beta.6.tgz#df67af3b87f45f4c82c19783d782a8415cb375ce"
 
 vendors@^1.0.0:
   version "1.0.2"

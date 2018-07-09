@@ -92,3 +92,12 @@ nav.navbar {
 .columns {
     margin: 0;
 }
+
+.media {
+    display: flex;
+    align-items: center;
+}
+
+.delete {
+    border-radius: 9999px;
+}
