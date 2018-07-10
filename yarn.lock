@@ -326,7 +326,7 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
-axios@0.17.1:
+axios@0.17.1, axios@^0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
   dependencies:
@@ -1005,6 +1005,12 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+botman-tinker@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/botman-tinker/-/botman-tinker-0.0.1.tgz#e96053542c7dd650f023a3e4d40da5c60ca17784"
+  dependencies:
+    axios "^0.17.1"
 
 brace-expansion@^1.1.7:
   version "1.1.11"

@@ -17,6 +17,9 @@ window.Vue = Vue;
 import "./plugins";
 import "./components";
 
+import { TinkerComponent } from "botman-tinker";
+Vue.component("botman-tinker", TinkerComponent);
+
 Vue.mixin({
     methods: {
         route: route
