@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="column is-one-third-desktop is-one-mobile">
-    <article class="card is-rounded is-shadowless">
+    <article class="card rounded shadow">
         <form method="POST" action="{{ route('login') }}" novalidate>
             @csrf
             <div class="card-content">
                 <h1 class="title has-text-centered">
                     <a href="/">
-                        <img src="http://via.placeholder.com/250x250" alt="Logo">
+                        <img src="{{ asset('storage/logo.png') }}" alt="Logo" class="h-48">
                     </a>
                 </h1>
                 <div class="field">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                        <button class="button is-info is-medium is-fullwidth" type="submit">
+                        <button class="button is-info is-medium is-fullwidth rounded shadow" type="submit">
                             <i class="fa fa-user"></i>
                             @lang('Login')
                         </button>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="has-text-centered">
                     <small>
-                        <a class="is-link" href="{{ route('password.request') }}">
+                        <a class="is-link hover:underline" href="{{ route('password.request') }}">
                             @lang('Forgot Your Password?')
                         </a>
                     </small>
