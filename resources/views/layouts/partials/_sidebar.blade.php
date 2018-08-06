@@ -48,5 +48,12 @@
                 @lang('Wifi Networks')
             </a>
         </li>
+        <li>
+            <a class="{{ isActive('facts*') }}"
+               href="{{ route('facts.index') }}">
+                <span class="z-network mr-2"></span>
+                @lang('Random Facts')
+            </a>
+        </li>
     </ul>
 </aside>

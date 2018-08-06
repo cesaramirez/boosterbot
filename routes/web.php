@@ -36,6 +36,7 @@ $router->middleware('access.active')
            $router->resource('rewards', 'RewardsController')->except('show');
            $router->resource('activities', 'ActivitiesController')->except('show');
            $router->resource('networks', 'WifiNetworksController')->except('show');
+           $router->resource('facts', 'RandomFactsController')->except('show');
        });
 
 $router->match(['get', 'post'], '/botman', 'BotManController@handle');

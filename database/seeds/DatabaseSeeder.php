@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RewardsTableSeeder::class);
         $this->call(ActivitiesTableSeeder::class);
         $this->call(WifiNetworksTableSeeder::class);
+        $this->call(RandomFactsTableSeeder::class);
     }
 }
